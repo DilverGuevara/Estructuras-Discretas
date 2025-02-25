@@ -5,16 +5,8 @@ abcisa :: Float -> Float -> Float
 abcisa p q = p + (-q)
 ordenada :: Float -> Float -> Float
 ordenada r s = r + (-s)
-distancia :: (Float, Float) -> (Float, Float) -> Float
-distancia (w, x) (y, z) = sqrt ((abcisa w y)^2 + (ordenada x z)^2)
-
-
-
-pendiente :: (Float, Float) -> (Float, Float) -> Float
-pendiente (x1, y1) (x2,y2) = if y1 == y2
-    then 0
-    else (y2 - y1) / (x2 - x1)
-
+distanciaPuntos :: (Float, Float) -> (Float, Float) -> Float
+distanciaPuntos (w, x) (y, z) = sqrt ((abcisa w y)^2 + (ordenada x z)^2)
 
 
 valorAbsoluto :: Int -> Int
@@ -22,6 +14,11 @@ valorAbsoluto z = if z < 0
         then -z
         else z
 
+
+pendiente :: (Float, Float) -> (Float, Float) -> Float
+pendiente (x1, y1) (x2,y2) = if y1 == y2
+    then 0
+    else (y2 - y1) / (x2 - x1)
 
 
 
